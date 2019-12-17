@@ -3,6 +3,7 @@ import './App.css';
 import Header from './component/Header'
 import Filter from './component/Filter'
 import Inventory from './component/Inventory'
+import { RecipeIdeas } from './component/RecipeIdeas'
 
 class App extends React.Component {
   
@@ -31,6 +32,7 @@ class App extends React.Component {
         <Header />
         <Inventory expand={this.state.expand} onClick={() => this.expander('inventory')} />
         <Filter expand={this.state.expand} onClick={() => this.expander('filter')} />
+        <RecipeIdeas expand={this.state.expand} onClick={() => this.expander('recipes')} />
       </div>
     );
   }
