@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Header from './component/Header'
 import Filter from './component/Filter'
 import Inventory from './component/Inventory'
 
@@ -27,6 +28,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <Header />
         <Inventory expand={this.state.expand} onClick={() => this.expander('inventory')} />
         <Filter expand={this.state.expand} onClick={() => this.expander('filter')} />
       </div>
