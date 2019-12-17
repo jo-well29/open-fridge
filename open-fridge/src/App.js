@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
+import { RecipeIdeas } from './component/RecipeIdeas';
 
-function App() {
+function App(props) {
   return (
     <div className="App">
      
