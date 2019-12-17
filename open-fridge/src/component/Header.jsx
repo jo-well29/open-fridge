@@ -1,6 +1,5 @@
 import React from 'react'
 import './styles/Header.css'
-import './images/fridgeLogo.png'
 
 
 const Header = () => {
