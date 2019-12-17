@@ -1,13 +1,39 @@
 import React from 'react';
 import './App.css';
-import { RecipeIdeas } from './component/RecipeIdeas';
+import Header from './component/Header'
+import Filter from './component/Filter'
+import Inventory from './component/Inventory'
 
-function App(props) {
-  return (
-    <div className="App">
-     
-    </div>
-  );
+class App extends React.Component {
+  
+  constructor(props) {
+    super(props);
+    this.state = {
+      expand: 'filter'
+    }
+  }
+
+  expander = (sectionName) => {
+    if (this.state.expand !== sectionName) {
+      this.setState({
+        expand: sectionName
+      })
+    } else {
+      this.setState({
+        expand: null
+      })
+    }
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <Inventory expand={this.state.expand} onClick={() => this.expander('inventory')} />
+        <Filter expand={this.state.expand} onClick={() => this.expander('filter')} />
+      </div>
+    );
+  }
 }
 
 export default App;

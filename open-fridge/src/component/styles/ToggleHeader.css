@@ -1,0 +1,30 @@
+.toggleheader {
+    height: 56px;
+    display: flex;
+}
+
+.cocoa {
+    background-color: #a68477;
+}
+
+.magenta {
+    background-color: #ff595e;
+}
+
+.mint {
+    background-color: #b8fab6;
+}
+
+.content {    
+    overflow: hidden;
+    transition: .4s;
+    border: 2px dashed #b8fab6;
+}
+.contract {
+    flex: 0 10 0px;
+}
+
+.expand {
+    flex: 10 0 0px;
+}
+

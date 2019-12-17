@@ -9,3 +9,4 @@ export const FilterButton = ({ onClick, className, color, title, variant }) => (
 		{title}
 	</button>
 )
+
