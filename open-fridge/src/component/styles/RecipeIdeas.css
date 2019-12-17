@@ -1,0 +1,29 @@
+.RecipeIdeas-container {
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.Tile-info-container {
+
+}
+
+
+
+.RecipeTile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.image-container {
+    width: 50%;
+    
+}
+
+.recipe-cooktime {
+    color: grey;
+}
+
