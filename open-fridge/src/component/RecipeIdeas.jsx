@@ -1,8 +1,8 @@
 import React from 'react'
 import '../styles/RecipeIdeas.css'
 import '../styles/RecipeCard.css'
-import { RecipeTile } from '../shared/RecipeTile'
-import { RecipeCard } from '../shared/RecipeCard'
+import { RecipeTile } from './shared/RecipeTile'
+import { RecipeCard } from './shared/RecipeCard'
 
 
 export const RecipeIdeas = (props) => {
