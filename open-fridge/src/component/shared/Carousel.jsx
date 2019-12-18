@@ -7,14 +7,23 @@ import { ingredients } from '../../config'
 
 
 export default class MultipleItems extends Component {
+  
+  constructor(props) {
+    super(props);
+  }
+
+  selector = (e) => {
+    this.props.onSelect(e, 'ingredients');
+  }
+
   render() {
 
     const ingredientMapper = (category) => {
       const map = Object.keys(ingredients[category]).map((item, i) => {
         return (
-          <div key={i} name={item}>
-            <img src={ingredients[category][item]} />
-          </div>
+          <button key={i} name={item} onClick={this.selector}>
+            <img name={item} src={ingredients[category][item]} style={{pointerEvents: 'none'}} />
+          </button>
         )
       })
       return map;
@@ -26,8 +35,8 @@ export default class MultipleItems extends Component {
       dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: 3,
-      slidesToScroll: 3,
+      slidesToShow: 4,
+      slidesToScroll: 4,
       arrows: true
     };
 

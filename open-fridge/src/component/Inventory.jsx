@@ -4,13 +4,13 @@ import ToggleHeader from './shared/ToggleHeader'
 import Carousel from './shared/Carousel'
 import { ingredients, indexer } from '../config'
 
-export const Inventory = (props) => {
+export const Inventory = ({ ingredientSearch, onSelect, onClick, expand, textChange }) => {
     const index = indexer();
-    const results = props.ingredientSearch.length > 0 ? Object.keys(index).filter(key => key.slice(0, props.ingredientSearch.length) == props.ingredientSearch) : null;
+    const results = ingredientSearch.length > 0 ? Object.keys(index).filter(key => key.slice(0, ingredientSearch.length) === ingredientSearch) : null;
     console.log(`results: ${results}`);
 
     const resultButtons = results ? results.map((result, i) => { return (
-        <button name={result}>
+        <button name={result} onClick={(e) => onSelect(e, 'ingredients')}>
             {result.charAt(0).toUpperCase() + result.slice(1).replace('_',' ')} 
             <img src={ingredients[index[result]][result]} alt={result} />
         </button>
@@ -18,13 +18,13 @@ export const Inventory = (props) => {
 
     return (
         <>
-            <ToggleHeader onClick={props.onClick} expand={props.expand} sectionName="inventory" label="What's in your fridge?" color="cocoa" />
-            <div className={`content ${props.expand === 'inventory' ? 'expand' : 'contract'}` }>
+            <ToggleHeader onClick={onClick} expand={expand} sectionName="inventory" label="What's in your fridge?" color="cocoa" />
+            <div className={`content ${expand === 'inventory' ? 'expand' : 'contract'}` }>
                 <form className="ingredientSearch" onSubmit={(event) => event.preventDefault()}>
-                    <input name="ingredientSearch" type="text" value={props.ingredientSearch} onChange={props.textChange} />
+                    <input name="ingredientSearch" type="text" value={ingredientSearch} onChange={textChange} />
                 </form>
                 { resultButtons }
-                <Carousel />
+                <Carousel onSelect={onSelect} />
             </div>
         </>
     )
