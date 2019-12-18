@@ -45,16 +45,20 @@ const ingredients = {
 }
 
 // index is an object with each ingredient as key and its category as value, ex: {carrots: vegetables, chicken: protein}
-let index = {};
-if (localStorage.ingredients) {
-    index = JSON.parse(localStorage.ingredients);
-} else {
-    Object.keys(ingredients).forEach(category => Object.keys(ingredients[category]).forEach(ingredient => index[ingredient] = category));
-    localStorage.setItem('ingredients', JSON.stringify(index));
+const indexer = () => {
+    let index = {};
+    if (localStorage.ingredients) {
+        index = JSON.parse(localStorage.ingredients);
+    } else {
+        console.log(`WATCH OUT: Running indexer.`)
+        Object.keys(ingredients).forEach(category => Object.keys(ingredients[category]).forEach(ingredient => index[ingredient] = category));
+        localStorage.setItem('ingredients', JSON.stringify(index));
+    }
+    return index;
 }
 
 module.exports = {
     flavors,
     ingredients,
-    index
+    indexer
 }

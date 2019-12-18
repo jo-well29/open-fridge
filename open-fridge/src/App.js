@@ -33,8 +33,7 @@ class App extends React.Component {
   textHandler = (e) => this.setState({ [e.target.name]: e.target.value });
 
   sliderHandler = (e) => {
-    const key = `filter.${e.target.name}`;
-    this.setState({
+      this.setState({
       [e.target.name] : Number(e.target.value)
     })
   }
