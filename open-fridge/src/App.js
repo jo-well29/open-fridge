@@ -14,7 +14,8 @@ class App extends React.Component {
       ingredientSearch: '',
       filterTime: 15,
       filterTemp: null,
-      filterFlavor: []
+      filterFlavor: [],
+      ingredients: []
     }
   }
 
@@ -62,7 +63,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <Inventory expand={this.state.expand} onClick={() => this.expander('inventory')} textChange={this.textHandler} ingredientSearch={this.state.ingredientSearch} />
+        <Inventory expand={this.state.expand} onClick={() => this.expander('inventory')} textChange={this.textHandler} ingredientSearch={this.state.ingredientSearch} onSelect={this.selector} />
         <Filter formData={filterData} onChange={this.sliderHandler} expand={this.state.expand} onSelect={this.selector} tempToggle={this.tempToggle} onClick={() => this.expander('filter')} />
         <RecipeIdeas expand={this.state.expand} onClick={() => this.expander('recipes')} />
       </div>
