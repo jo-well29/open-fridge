@@ -1,40 +1,29 @@
 import React from 'react'
 import './styles/Filter.css'
 import ToggleHeader from './shared/ToggleHeader'
+import FilterButton from './shared/FilterButton'
+import { flavors } from '../config'
 
-const Filter = (props) => {
+const Filter = ({ formData, onSelect, onClick, onChange, tempToggle, expand }) => {
+    const flavorButtons = flavors.map((flavor, i) => (<FilterButton key={i} name={flavor} className={formData.filterFlavor.includes(flavor) ? 'selected' : ''} onClick={(e) => onSelect(e, 'filterFlavor')}>{flavor}</FilterButton>));
     return (
         <>
-            <ToggleHeader onClick={props.onClick} expand={props.expand} sectionName="filter" label="Filter" color="magenta" />
-            <div className={`content ${props.expand === 'filter' ? 'expand' : 'contract'}`}>
-                <div className="filter-container">
-                    <div className="time-container">
-                        <h3>Time</h3>
-                        <input type="range" min="5" max="120" className="slider" />
+            <ToggleHeader onClick={onClick} expand={expand} sectionName="filter" label="Filter" color="magenta" />
+            <div className={`content ${expand === 'filter' ? 'expand' : 'contract'}`}>
+                <h3>Time</h3>
+                <input name="filterTime" type="range" step="15" value={formData.filterTime} min="15" max="60" className="slider" onChange={onChange} />
+                <p>{formData.filterTime} minutes</p>
+                <div className="temperature">
+                    <h3>Temperature</h3>
+                    <FilterButton name="Hot" className={formData.filterTemp === 'Hot' ? 'selected' : ''} onClick={tempToggle} />
+                    <FilterButton name="Cold" className={formData.filterTemp === 'Cold' ? 'selected' : ''} onClick={tempToggle} />
+                </div>
+                <div className="flavor">
+                    <h3>Flavor</h3>
+                    <div className="attributes">
+                        { flavorButtons }
                     </div>
-                    <div className="temperature">
-                        <h3>Temperature</h3>
-                        <button className="temp">Hot</button>
-                        <button className="temp">Cold</button>
-                    </div>
-                    <div className="flavor">
-                        <h3>Flavor</h3>
-                        <div className="attributes">
-                            <button>Sweet</button>
-                            <button>Savory</button>
-                            <button>Tangy</button>
-                            <button>Dry</button>
-                            <button>Saucy</button>
-                            <button>Soupy</button>
-                            <button>Plain</button>
-                            <button>Mild</button>
-                            <button>Spicy</button>
-                            <button>Soft</button>
-                            <button>Chewy</button>
-                            <button>Crunchy</button>
-                        </div>
 
-                    </div>
                 </div>
             </div>
         </>
