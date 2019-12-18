@@ -1,17 +1,19 @@
 const flavors = [
     'Sweet',
     'Savory',
+    'Tangy',
+    'Dry',
+    'Saucy',
     'Soupy',
     'Plain',
-    'Crunchy',
     'Mild',
-    'Tangy',
-    'Chewy',
-    'Dry',
     'Spicy',
     'Soft',
-    'Saucy'
+    'Crunchy',
+    'Chewy'
 ]
+
+
 
 const ingredients = {
     // each ingredient key points to image URL
