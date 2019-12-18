@@ -1,2 +1,104 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
+@media only screen and (max-width: 500px) {
+.filter-container {
+    border: 2px solid black;
+}
+
+.time-container {
+    border: 2px solid brown;
+    display: flex;
+    justify-content: space-around;
+}
+
+.temperature {
+    border: 2px solid red;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.temp {
+    height: 70%;
+}
+
+.flavor {
+    border: 2px solid blue;
+    display: flex;
+    justify-content: space-around;
+    height: 20vh;
+
+
+}
+
+.attributes {
+    border: 2px solid purple;
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.attributes button {
+    border-radius: 0.6em;
+    width: 30%;
+    height: 100%;
+}
+
+.temperature button {
+    border-radius: 0.6em;
+    width: 10%;
+    height: 20%;
+}
+
+}
+
+.filter-container {
+    border: 2px solid black;
+}
+
+.time-container {
+    border: 2px solid brown;
+    display: flex;
+    justify-content: space-around;
+}
+
+.temperature {
+    border: 2px solid red;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.temp {
+    height: 70%;
+}
+
+.flavor {
+    border: 2px solid blue;
+    display: flex;
+    justify-content: space-around;
+    height: 20vh;
+
+
+}
+
+.attributes {
+    border: 2px solid purple;
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.attributes button {
+    border-radius: 0.6em;
+    width: 30%;
+    height: 20%;
+}
+
+.temperature button {
+    border-radius: 0.6em;
+    width: 10%;
+    height: 20%;
+}
