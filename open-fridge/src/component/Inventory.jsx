@@ -1,6 +1,7 @@
 import React from 'react'
 import './styles/Inventory.css'
 import ToggleHeader from './shared/ToggleHeader'
+import Carousel from './shared/Carousel'
 import { ingredients, indexer } from '../config'
 
 export const Inventory = (props) => {
@@ -23,6 +24,7 @@ export const Inventory = (props) => {
                     <input name="ingredientSearch" type="text" value={props.ingredientSearch} onChange={props.textChange} />
                 </form>
                 { resultButtons }
+                <Carousel />
             </div>
         </>
     )
