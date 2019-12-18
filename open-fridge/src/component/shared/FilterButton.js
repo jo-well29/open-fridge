@@ -1,12 +1,12 @@
 import React from 'react'
 
-
-
-export const FilterButton = ({ onClick, className, color, title, variant }) => (
+export const FilterButton = ({ onClick, className, list, color, name, variant }) => (
 	<button
-		onClick={onClick}
+		name={name}
+		onClick={(e) => onClick(e, list)}
 		className={`button ${className} ${variant} ${color}`}>
-		{title}
+		{name}
 	</button>
 )
 
+export default FilterButton;
