@@ -4,9 +4,9 @@ import ToggleHeader from './shared/ToggleHeader'
 import { ingredients, index } from '../config'
 
 export const Inventory = (props) => {
-    const results = props.ingredientSearch.length > 0 ? Object.keys(index).filter(key => key.includes(props.ingredientSearch)) : null;
+    const results = props.ingredientSearch.length > 0 ? Object.keys(index).filter(key => key.slice(0, props.ingredientSearch.length) == props.ingredientSearch) : null;
     console.log(`results: ${results}`);
-    
+
     const resultButtons = results ? results.map((result, i) => { return (
         <button name={result}>
             {result.charAt(0).toUpperCase() + result.slice(1).replace('_',' ')} 
