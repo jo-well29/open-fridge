@@ -7,14 +7,15 @@ const Filter = (props) => {
         <>
             <ToggleHeader onClick={props.onClick} expand={props.expand} sectionName="filter" label="Filter" color="magenta" />
             <div className={`content ${props.expand === 'filter' ? 'expand' : 'contract'}`}>
-                The content
-                    <div className="filter">
-                    <h3>Time</h3>
-                    <input type="range" min="5" max="120" className="slider" />
+                <div className="filter-container">
+                    <div className="time-container">
+                        <h3>Time</h3>
+                        <input type="range" min="5" max="120" className="slider" />
+                    </div>
                     <div className="temperature">
                         <h3>Temperature</h3>
-                        <button>Hot</button>
-                        <button>Cold</button>
+                        <button className="temp">Hot</button>
+                        <button className="temp">Cold</button>
                     </div>
                     <div className="flavor">
                         <h3>Flavor</h3>

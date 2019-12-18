@@ -1,2 +1,35 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
+.filter-container {
+    border: 2px solid black;
+}
+
+.time-container {
+    border: 2px solid brown;
+    display: flex;
+    justify-content: space-around;
+}
+
+.temperature {
+    border: 2px solid red;
+    display: flex;
+    justify-content: space-around;
+}
+
+.temp {
+    height: 70%;
+}
+
+.flavor {
+    border: 2px solid blue;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.attributes {
+    border: 2px solid purple;
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+}
