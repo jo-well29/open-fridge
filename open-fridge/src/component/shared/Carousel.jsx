@@ -21,9 +21,9 @@ export default class MultipleItems extends Component {
     const ingredientMapper = (category) => {
       const map = Object.keys(ingredients[category]).map((item, i) => {
         return (
-          <button key={i} name={item} onClick={this.selector}>
-            <img name={item} src={ingredients[category][item]} style={{pointerEvents: 'none'}} />
-          </button>
+          <div key={i} name={item} style={{pointerEvents: 'none', background: '#ffffff'}} >
+            <img name={item} src={ingredients[category][item]} style={{cursor: 'pointer'}} onClick={this.selector}  />
+          </div>
         )
       })
       return map;
