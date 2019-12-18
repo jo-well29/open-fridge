@@ -12,6 +12,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       expand: 'filter',
+      ingredientSearch: '',
       filterTime: 15,
       filterTemp: null,
       filterFlavor: []
@@ -30,9 +31,10 @@ class App extends React.Component {
     }
   }
 
-  changeHandler = (e) => {
-    const key = `filter.${e.target.name}`;
-    this.setState({
+  textHandler = (e) => this.setState({ [e.target.name]: e.target.value });
+
+  sliderHandler = (e) => {
+      this.setState({
       [e.target.name] : Number(e.target.value)
     })
   }
@@ -61,8 +63,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <Inventory expand={this.state.expand} onClick={() => this.expander('inventory')} />
-        <Filter formData={filterData} onChange={this.changeHandler} expand={this.state.expand} onSelect={this.selector} tempToggle={this.tempToggle} onClick={() => this.expander('filter')} />
+        <Inventory expand={this.state.expand} onClick={() => this.expander('inventory')} textChange={this.textHandler} ingredientSearch={this.state.ingredientSearch} />
+        <Filter formData={filterData} onChange={this.sliderHandler} expand={this.state.expand} onSelect={this.selector} tempToggle={this.tempToggle} onClick={() => this.expander('filter')} />
         <RecipeIdeas expand={this.state.expand} onClick={() => this.expander('recipes')} />
         <SearchBar />
       </div>
