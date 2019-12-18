@@ -2,8 +2,11 @@ import React from 'react'
 import './styles/Filter.css'
 import ToggleHeader from './shared/ToggleHeader'
 import FilterButton from './shared/FilterButton'
+import { flavors } from '../config'
 
 const Filter = (props) => {
+    console.log(flavors)
+    const flavorButtons = flavors.map(flavor => (<FilterButton name={flavor} onClick={(e) => props.onSelect(e, 'filterFlavor')}>{flavor}</FilterButton>));
     return (
         <>
             <ToggleHeader onClick={props.onClick} expand={props.expand} sectionName="filter" label="Filter" color="magenta" />
@@ -14,24 +17,13 @@ const Filter = (props) => {
                     <p>{props.formData.filterTime} minutes</p>
                     <div className="temperature">
                         <h3>Temperature</h3>
-                        <FilterButton name="Hot" onClick={props.onSelect} list='filterTemp' />
-                        <FilterButton name="Cold" onClick={props.onSelect} list='filterTemp' />
+                        <FilterButton name="Hot" onClick={props.tempToggle} />
+                        <FilterButton name="Cold" onClick={props.tempToggle} />
                     </div>
                     <div className="flavor">
                         <h3>Flavor</h3>
                         <div className="attributes">
-                            <button name="Sweet" onClick={(e) => props.onSelect(e, 'filterFlavor')}>Sweet</button>
-                            <button name="Savory" onClick={(e) => props.onSelect(e, 'filterFlavor')}>Savory</button>
-                            <button onClick={(e) => props.onSelect(e, 'filterFlavor')}>Tangy</button>
-                            <button onClick={(e) => props.onSelect(e, 'filterFlavor')}>Dry</button>
-                            <button onClick={(e) => props.onSelect(e, 'filterFlavor')}>Saucy</button>
-                            <button onClick={(e) => props.onSelect(e, 'filterFlavor')}>Soupy</button>
-                            <button onClick={(e) => props.onSelect(e, 'filterFlavor')}>Plain</button>
-                            <button onClick={(e) => props.onSelect(e, 'filterFlavor')}>Mild</button>
-                            <button onClick={(e) => props.onSelect(e, 'filterFlavor')}>Spicy</button>
-                            <button onClick={(e) => props.onSelect(e, 'filterFlavor')}>Soft</button>
-                            <button onClick={(e) => props.onSelect(e, 'filterFlavor')}>Chewy</button>
-                            <button onClick={(e) => props.onSelect(e, 'filterFlavor')}>Crunchy</button>
+                            { flavorButtons }
                         </div>
 
                     </div>

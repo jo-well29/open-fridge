@@ -12,7 +12,7 @@ class App extends React.Component {
     this.state = {
       expand: 'filter',
       filterTime: 15,
-      filterTemp: '',
+      filterTemp: null,
       filterFlavor: []
     }
   }
@@ -36,11 +36,7 @@ class App extends React.Component {
     })
   }
 
-  buttonPusher = (e, list) => {
-
-    console.log(list)
-    console.log(this.state[list])
-    console.log(e.target.name)
+ selector = (e, list) => {
     let newList;
     if (this.state[list].includes(e.target.name)) {
       newList = [ ...this.state[list]]
@@ -54,6 +50,10 @@ class App extends React.Component {
     ))
   }
 
+  tempToggle = (e) => {
+    this.state.filterTemp === e.target.name ? this.setState({filterTemp: null}) : this.setState({filterTemp: e.target.name});
+  }
+
   render() {
     const { filterTime, filterTemp, filterFlavor } = this.state;
     const filterData = { filterTime, filterTemp, filterFlavor };
@@ -61,7 +61,7 @@ class App extends React.Component {
       <div className="App">
         <Header />
         <Inventory expand={this.state.expand} onClick={() => this.expander('inventory')} />
-        <Filter formData={filterData} onChange={this.changeHandler} expand={this.state.expand} onSelect={this.buttonPusher} onClick={() => this.expander('filter')} />
+        <Filter formData={filterData} onChange={this.changeHandler} expand={this.state.expand} onSelect={this.selector} tempToggle={this.tempToggle} onClick={() => this.expander('filter')} />
         <RecipeIdeas expand={this.state.expand} onClick={() => this.expander('recipes')} />
       </div>
     );
