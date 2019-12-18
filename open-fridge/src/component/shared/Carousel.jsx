@@ -9,13 +9,18 @@ import { ingredients } from '../../config'
 export default class MultipleItems extends Component {
   render() {
 
-    const vegetables = Object.keys(ingredients.vegetables).map((vegetable, i) => {
-      return (
-        <div name={vegetable}>
-          <img src={ingredients.vegetables[vegetable]} />
-        </div>
-      )
-    })
+    const ingredientMapper = (category) => {
+      const map = Object.keys(ingredients[category]).map((item, i) => {
+        return (
+          <div key={i} name={item}>
+            <img src={ingredients[category][item]} />
+          </div>
+        )
+      })
+      return map;
+    }
+
+    const vegetables = ingredientMapper('vegetables');
 
     const settings = {
       dots: true,
