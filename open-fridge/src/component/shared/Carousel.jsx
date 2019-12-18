@@ -7,13 +7,22 @@ import { ingredients } from '../../config'
 
 
 export default class MultipleItems extends Component {
+  
+  constructor(props) {
+    super(props);
+  }
+
+  selector = (e) => {
+    this.props.onSelect(e, 'ingredients');
+  }
+
   render() {
 
     const ingredientMapper = (category) => {
       const map = Object.keys(ingredients[category]).map((item, i) => {
         return (
-          <div key={i} name={item}>
-            <img src={ingredients[category][item]} />
+          <div key={i} name={item} style={{pointerEvents: 'none', background: '#ffffff'}} >
+            <img name={item} src={ingredients[category][item]} style={{cursor: 'pointer'}} onClick={this.selector}  />
           </div>
         )
       })
@@ -21,23 +30,32 @@ export default class MultipleItems extends Component {
     }
 
     const vegetables = ingredientMapper('vegetables');
+    const proteins = ingredientMapper('proteins');
 
     const settings = {
       dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: 3,
-      slidesToScroll: 3,
+      slidesToShow: 4,
+      slidesToScroll: 4,
       arrows: true
     };
 
     return (
+      <>
       <div>
         <h2> Vegetables </h2>
         <Slider {...settings}>
           {vegetables}
         </Slider>
       </div>
+      <div>
+        <h2> Proteins </h2>
+        <Slider {...settings}>
+          {proteins}
+        </Slider>
+      </div>
+      </>
     );
   }
 }

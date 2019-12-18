@@ -29,7 +29,7 @@ const ingredients = {
         cauliflower: 'https://i.imgur.com/LAq4eUA.png',
         brussels_sprouts: 'https://i.imgur.com/Ev9DXao.png'
     },
-    protein: {
+    proteins: {
         chicken: '',
         pork: '',
         beef: '',
