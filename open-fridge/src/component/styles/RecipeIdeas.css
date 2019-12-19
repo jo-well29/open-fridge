@@ -30,10 +30,10 @@
     justify-content: center;
     flex-wrap: wrap;
     position: absolute;
-    top: 25%;
-    left: 20%;
+    top: 18%;
+    left: 19%;
     width: 60%;
-    padding: 5%;
+    padding: 2%;
     z-index: 2;
     box-shadow: 2px black;
     border: 1px solid black;
@@ -48,6 +48,8 @@
 .exit-button {
     cursor: pointer;
     text-align: end;
+    margin-left: 100%;
+    margin-bottom: 10%;
 }
 
 .modal button {
@@ -96,7 +98,7 @@
         position: absolute;
         top: 25%;
         left: 11%;
-        width: 80%;
+        width: 70%;
         z-index: 2;
         box-shadow: 4px black;
         border: 1px solid black
@@ -105,6 +107,25 @@
     .modal img {
         width: 80%;
         height: 40%;
+    }
+
+    .exit-button {
+        cursor: pointer;
+        text-align: end;
+        margin-left: 80%;
+        margin-bottom: 10%;
+    }
+
+    .modal button {
+        background-color: #FF595E;
+        border-radius: 0.6em;
+        padding: 7px;
+        margin-top: 5%;
+        font-weight: 700;
+    }
+    
+    .modal button:focus {
+        outline: 0;
     }
     
 }
