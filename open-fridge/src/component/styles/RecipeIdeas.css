@@ -1,14 +1,8 @@
 .RecipeIdeas-container {
     display: flex;
     flex-direction: column;
-
-
+    cursor: pointer;
 }
-
-.Tile-info-container {
-
-}
-
 
 
 .RecipeTile {
@@ -32,21 +26,74 @@
     flex-direction: column;
     align-items: center;
     background-color:white;
-    border-radius: 5px;
+    border-radius: 0.6em;
     justify-content: center;
     flex-wrap: wrap;
     position: absolute;
-    top: 30%;
+    top: 25%;
     left: 25%;
     width: 50%;
     z-index: 2;
     box-shadow: 2px black;
-    border: 1px solid black
+    border: 1px solid black;
 }
 
 .modal img {
     width: 80%;
-    height:40%;
+    height: 40%;
+    
+}
+
+.exit-button {
+    cursor: pointer;
+    text-align: end;
+}
+
+@media only screen and (max-width: 500px) {
+    .RecipeIdeas-container {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    .RecipeTile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    
+    .image-container {
+        width: 50%;
+        
+    }
+    
+    .recipe-cooktime {
+        color: grey;
+    }
+    
+    .modal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color:white;
+        border-radius: 0.6em;
+        justify-content: center;
+        flex-wrap: wrap;
+        position: absolute;
+        top: 25%;
+        left: 11%;
+        width: 80%;
+        z-index: 2;
+        box-shadow: 4px black;
+        border: 1px solid black
+    }
+    
+    .modal img {
+        width: 80%;
+        height: 40%;
+    }
+    
 }
 
 
