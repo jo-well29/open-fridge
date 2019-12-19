@@ -1,0 +1,11 @@
+.ingredientButton {
+    background-color: #ffffff;
+}
+
+.ingredientButton:focus {
+    outline: none;
+}
+
+.ingredientButton.selected {
+    opacity: .4;
+}

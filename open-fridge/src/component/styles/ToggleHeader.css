@@ -2,6 +2,7 @@
     height: 56px;
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
 }
 
 .cocoa {
@@ -18,8 +19,7 @@
 
 .content {    
     overflow: hidden;
-    transition: .4s;
-    border: 2px dashed #b8fab6;
+    transition: .5s;
 }
 .contract {
     flex: 0 10 0px;

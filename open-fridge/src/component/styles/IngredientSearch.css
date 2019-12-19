@@ -1,0 +1,22 @@
+.result {
+    display: flex;
+    cursor: pointer;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 0 5px grey;
+    margin: auto;
+    margin-bottom: 8px;
+    padding: 4px;
+}
+
+.result.selected {
+    opacity: .4;
+}
+
+.result h3 {
+    margin: 0;
+}
+
+.result img {
+    height: 40px;
+}
