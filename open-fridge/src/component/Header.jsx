@@ -7,7 +7,10 @@ const Header = (props) => {
         <div className="header">
             <div className="logo"><img src="https://i.imgur.com/ESkARC2.png" alt="" /></div>
             <h1>Open Fridge</h1>
-            <div className="hamburger-menu"><img src="https://i.imgur.com/igYHBRK.png" alt="" onClick={props.onClick}/></div>
+            <div className="hamburger-menu">
+                <img className="hamburger" src="https://i.imgur.com/igYHBRK.png" alt="" onClick={props.onClick}/>
+                <p>Menu</p>
+            </div>
         </div>
     )
 }
