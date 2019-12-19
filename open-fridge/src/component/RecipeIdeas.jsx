@@ -38,7 +38,7 @@ export default class RecipeIdeas extends React.Component {
             <div>cooktime: 15</div>
         </div>
             
-        const renderModal = this.state.modalClick ? modal : 'false'
+        const renderModal = this.state.modalClick ? modal : false
 
         return (
             <>

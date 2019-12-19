@@ -6,6 +6,7 @@ import Inventory from './component/Inventory'
 import RecipeIdeas from './component/RecipeIdeas'
 
 
+
 class App extends React.Component {
   
   constructor(props) {
