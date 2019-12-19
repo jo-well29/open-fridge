@@ -101,13 +101,28 @@ In Toulouse, the locals pour hearty, tannic reds to accompany cassoulet, like th
 const photoUrls = [
     'https://images.unsplash.com/photo-1493770348161-369560ae357d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
     'https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
-    'https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'
+    'https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
+    'https://images.unsplash.com/photo-1506354666786-959d6d497f1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
+    'https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1268&q=80',
+    'https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
+    'https://images.unsplash.com/photo-1432139555190-58524dae6a55?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1355&q=80',
+    'https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1335&q=80',
+    'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
+    'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
+    'https://images.unsplash.com/photo-1496116218417-1a781b1c416c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
+    'https://images.unsplash.com/photo-1496412705862-e0088f16f791?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
+    'https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
+    'https://images.unsplash.com/photo-1497888329096-51c27beff665?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80',
+    'https://images.unsplash.com/photo-1541544741938-0af808871cc0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80',
+    'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
+    'https://images.unsplash.com/photo-1504113888839-1c8eb50233d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1315&q=80',
+    'https://images.unsplash.com/photo-1490717064594-3bd2c4081693?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
 ];
 const measurements = ['c', 'tsp', 'oz', 'tbsp', 'c']
 const times = [15, 15, 15, 30, 30, 30, 30, 45, 60]
 const ingredientArray = Object.keys(nodeIndexer())
 
-let loremArray = loremSeed.toLowerCase().replace(!/[a-z]/,'').replace(/(\r\n|\n|\r)/gm," ").split(' ');
+let loremArray = loremSeed.toLowerCase().replace(/[^\w\s]|_/g, '').replace(/(\r\n|\n|\r)/gm," ").split(' ');
 loremArray = loremArray.map(word => word.replace(/\s+/g,' '));
 
 const loremPuller = (number, seed) => {
@@ -120,7 +135,7 @@ const loremPuller = (number, seed) => {
 
 const recipeMaker = () => {
 	let recipe = {};
-    let name = loremPuller(Math.floor(Math.random() * 4 + 2), loremArray).map(word => word.charAt(0) + word.slice(1));
+    let name = loremPuller(Math.floor(Math.random() * 2 + 2), loremArray).map(word => word.charAt(0) + word.slice(1));
     let capName = name.map(word => word.charAt(0).toUpperCase() + word.slice(1))
     recipe.name = capName.join(' ');
 	recipe.image = photoUrls[Math.floor(Math.random() * photoUrls.length)];
@@ -173,7 +188,7 @@ const recipeIndexer = () => {
         recipes = JSON.parse(localStorage.recipes);
     } else {
         console.log(`WATCH OUT: Running recipe indexer.`)
-        localStorage.setItem('recipes', JSON.stringify(dataMaker(30)));
+        localStorage.setItem('recipes', JSON.stringify(dataMaker(300)));
     }
     return recipes;
 }
