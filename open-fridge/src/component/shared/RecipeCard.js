@@ -1,21 +1,39 @@
 import React from 'react'
 
-export const RecipeCard = ( props ) => {
-    return (
-    <div className='RecipeCard'>
-        <div className='card-image-container'>
-            <img src={props.image_url} alt='card-recipe-img'/>
-        </div>
-        <div className='card-info-container'>
-            <div className='cook-time'>
-                <p className='minutes'>{props.cooktime} min</p> 
-            </div>
+class RecipeCard extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            modalClick: false
+        }
+    }
 
-            <div className='name'>
-                <h3>{props.name}</h3>
+    // handleClick = (info) => {
+    //         console.log('test', info)
+    //         this.setState({modalClick:true})
+    //     }
+
+    render() {
+
+
+        return (
+            <div className='RecipeCard' onClick={() => this.props.handleClick(this.props)}>
+                
+                <div className='card-image-container'>
+                    <img src={this.props.image_url} alt='card-recipe-img' />
+                </div>
+                <div className='card-info-container'>
+                    <div className='cook-time'>
+                        <p className='minutes'>{this.props.cooktime} min</p>
+                    </div>
+
+                    <div className='name'>
+                        <h3>{this.props.name}</h3>
+                    </div>
+                </div>
+              
             </div>
-        </div>
-        
-    </div>
-    )
+        )
+    }
 }
+export default RecipeCard
