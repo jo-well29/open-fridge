@@ -67,7 +67,7 @@ export default class RecipeIdeas extends React.Component {
         console.log(this.state.modalClick)
 
         const modal = 
-        <div className="modal">
+        <div className="recipeModal">
             <div className="exit-button" onClick={this.modalClick}>X</div>
             <img src={this.state.modalRecipe.image}/> 
             <div>{this.state.modalRecipe.name.toUpperCase()}</div>
