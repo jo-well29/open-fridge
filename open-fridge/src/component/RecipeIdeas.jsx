@@ -54,6 +54,8 @@ export default class RecipeIdeas extends React.Component {
             <div>Ingredients: {Object.keys(this.state.modalRecipe.ingredients).join(', ')}</div>
             <div>Cook time: {this.state.modalRecipe.time}</div>
             <div>Description: {this.state.modalRecipe.description}</div>
+
+            <button>LET'S MAKE THIS</button>
         </div>
             
         const renderModal = this.state.modalClick ? modal : false
