@@ -29,3 +29,8 @@
     flex: 10 0 0px;
 }
 
+.content.ideas.contract {
+    padding: 0;
+    flex: 0 0 auto;
+}
+

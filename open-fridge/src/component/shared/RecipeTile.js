@@ -1,8 +1,9 @@
 import React from 'react'
+import '../styles/RecipeTile.css'
 
 export const RecipeTile = (props) => {
     return (
-        <div className='RecipeTile'>
+        <div className='RecipeTile' onClick={(e) => props.handleClick(e, props.recipe)}>
             <div className='image-container'>
                 <img src={props.image_url} alt='recipe-img' />
             </div>
