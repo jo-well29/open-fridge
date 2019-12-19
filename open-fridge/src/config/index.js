@@ -188,7 +188,7 @@ const recipeIndexer = () => {
         recipes = JSON.parse(localStorage.recipes);
     } else {
         console.log(`WATCH OUT: Running recipe indexer.`)
-        localStorage.setItem('recipes', JSON.stringify(dataMaker(30)));
+        localStorage.setItem('recipes', JSON.stringify(dataMaker(300)));
     }
     return recipes;
 }
