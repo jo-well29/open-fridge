@@ -1,6 +1,7 @@
 .RecipeIdeas-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     cursor: pointer;
 }
 
@@ -13,8 +14,7 @@
 
 
 .image-container {
-    width: 50%;
-    
+    width: 50%;    
 }
 
 .recipe-cooktime {
@@ -67,7 +67,7 @@
 @media only screen and (max-width: 500px) {
     .RecipeIdeas-container {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
     }
     
     
