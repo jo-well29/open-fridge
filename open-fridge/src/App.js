@@ -65,7 +65,7 @@ class App extends React.Component {
         <Header />
         <Inventory expand={this.state.expand} onClick={() => this.expander('inventory')} textChange={this.textHandler} ingredientSearch={this.state.ingredientSearch} onSelect={this.selector} />
         <Filter formData={filterData} onChange={this.sliderHandler} expand={this.state.expand} onSelect={this.selector} tempToggle={this.tempToggle} onClick={() => this.expander('filter')} />
-        <RecipeIdeas expand={this.state.expand} onClick={() => this.expander('recipes')} />
+        <RecipeIdeas expand={this.state.expand} onClick={() => this.expander('recipes')} filterTime={this.state.filterTime} filterTemp={this.state.filterTemp} filterFlavor={this.state.filterFlavor} ingredients={this.state.ingredients} />
       </div>
     );
   }
