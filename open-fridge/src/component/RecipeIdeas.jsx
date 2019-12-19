@@ -4,8 +4,9 @@ import './styles/RecipeCard.css'
 import { RecipeTile } from './shared/RecipeTile'
 import RecipeCard from './shared/RecipeCard'
 import ToggleHeader from './shared/ToggleHeader'
+import { recipeIndexer } from '../config'
 
-
+   
 export default class RecipeIdeas extends React.Component {
     constructor() {
         super() 
@@ -28,7 +29,6 @@ export default class RecipeIdeas extends React.Component {
             <img src='https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&w=1000&q=80'/> 
             <div>'SUPER-DUPER-CASSEROLE'</div>
             <div>cooktime: 15</div>
-        
         </div>
         
         
