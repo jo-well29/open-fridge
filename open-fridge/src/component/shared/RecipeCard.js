@@ -17,7 +17,7 @@ class RecipeCard extends React.Component {
 
 
         return (
-            <div className='RecipeCard' onClick={() => this.props.handleClick(this.props)}>
+            <div className='RecipeCard' onClick={(e) => this.props.handleClick(e, this.props.recipe)}>
                 
                 <div className='card-image-container'>
                     <img src={this.props.image_url} alt='card-recipe-img' />

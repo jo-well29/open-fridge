@@ -133,7 +133,16 @@ const recipeMaker = () => {
 		let val = String(Math.floor(Math.random() * 5) + 1) + measurements[Math.floor(Math.random() * measurements.length)];
 		ingredientObj[key] = val;
 	}
-	recipe.ingredients = ingredientObj;
+    recipe.ingredients = ingredientObj;
+    
+    // description faker
+    let descArr = [];
+	for (let i = 0; i < 4; i++) {
+        let sentence = loremPuller(Math.floor(Math.random() * 16 + 8), loremArray).join(' ');
+        sentence = sentence.charAt(0).toUpperCase() + sentence.slice(1) + '.';
+        descArr.push(sentence);
+    }
+    recipe.description = descArr.join(' ');
 
 	// directions faker	
 	let stepsNum = Math.floor(Math.random() * 9 + 3);
