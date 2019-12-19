@@ -10,7 +10,15 @@ export default class RecipeIdeas extends React.Component {
     constructor(props) {
         super(props) 
             this.state = {
-                modalClick: false
+                modalClick: false,
+                modalRecipe: {
+                    image: '',
+                    name: '',
+                    ingredients: [],
+                    instructions: [],
+                    description: '',
+                    time: 0
+                }
         }
     }
 
@@ -20,22 +28,32 @@ export default class RecipeIdeas extends React.Component {
         return results;
     }
 
-    handleClick = (info) => {
-        console.log('test', info)
-        this.setState({modalClick:!this.state.modalClick})
+    modalClick = (e, recipe) => {
+        if (recipe) {
+            this.setState({
+                modalClick:!this.state.modalClick,
+                modalRecipe: recipe
+            })
+        } else {
+            this.setState({
+                modalClick:!this.state.modalClick
+            })
+        }
     }
         
     render() {
 
-        const recipeTiles = this.results().map(recipe => <RecipeCard image_url={recipe.image} name={recipe.name} cooktime={recipe.time} handleClick={this.handleClick} />)
+        const recipeTiles = this.results().map((recipe, i) => <RecipeCard key={i} image_url={recipe.image} name={recipe.name} cooktime={recipe.time} handleClick={this.modalClick} recipe={recipe} />)
         console.log(this.state.modalClick)
 
         const modal = 
         <div className="modal">
-            <div onClick={this.handleClick}>X</div>
-            <img src='https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&w=1000&q=80'/> 
-            <div>'SUPER-DUPER-CASSEROLE'</div>
-            <div>cooktime: 15</div>
+            <div onClick={this.modalClick}>X</div>
+            <img src={this.state.modalRecipe.image}/> 
+            <div>{this.state.modalRecipe.name.toUpperCase()}</div>
+            <div>Ingredients: {Object.keys(this.state.modalRecipe.ingredients).join(', ')}</div>
+            <div>Cook time: {this.state.modalRecipe.time}</div>
+            <div>Description: {this.state.modalRecipe.description}</div>
         </div>
             
         const renderModal = this.state.modalClick ? modal : false
@@ -47,7 +65,7 @@ export default class RecipeIdeas extends React.Component {
                     <div className='RecipeIdeas-container'>
                         {recipeTiles}
                         <RecipeCard image_url='https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&w=1000&q=80' name='SUPER-DUPER-CASSEROLE' cooktime='15' 
-                        handleClick={this.handleClick}/>
+                        handleClick={this.modalClick}/>
                         {/* <RecipeTile image_url='https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&w=1000&q=80' name='SUPER-DUPER-CASSEROLE' cooktime='15' /> */}
                         {renderModal}
                     </div>
