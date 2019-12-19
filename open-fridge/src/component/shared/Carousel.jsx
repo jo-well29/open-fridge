@@ -17,12 +17,13 @@ export default class MultipleItems extends Component {
   }
 
   render() {
+    console.log(this.props.selected);
 
     const ingredientMapper = (category) => {
       const map = Object.keys(ingredients[category]).map((item, i) => {
         return (
-          <div key={i} name={item} style={{pointerEvents: 'none', background: '#ffffff'}} >
-            <img name={item} src={ingredients[category][item]} style={{cursor: 'pointer'}} onClick={this.selector}  />
+          <div key={i} id={item} className={`ingredientButton${ this.props.selected.includes(item) ? ' selected' : '' }`} style={{pointerEvents: 'none'}} >
+            <img id={item} src={ingredients[category][item]} style={{cursor: 'pointer'}} onClick={this.selector} />
           </div>
         )
       })
