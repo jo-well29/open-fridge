@@ -32,7 +32,7 @@ export default class RecipeIdeas extends React.Component {
 
         const modal = 
         <div className="modal">
-            <div onClick={this.handleClick}>X</div>
+            <div className="exit-button" onClick={this.handleClick}>X</div>
             <img src='https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&w=1000&q=80'/> 
             <div>SUPER-DUPER-CASSEROLE</div>
             <div>cooktime: 15</div>

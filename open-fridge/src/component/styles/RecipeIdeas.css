@@ -1,6 +1,7 @@
 .RecipeIdeas-container {
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 
 
@@ -34,12 +35,18 @@
     width: 50%;
     z-index: 2;
     box-shadow: 2px black;
-    border: 1px solid black
+    border: 1px solid black;
 }
 
 .modal img {
     width: 70%;
     height:30%;
+    
+}
+
+.exit-button {
+    cursor: pointer;
+    text-align: end;
 }
 
 @media only screen and (max-width: 500px) {
