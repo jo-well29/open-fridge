@@ -9,6 +9,10 @@
     padding: 4px;
 }
 
+.result.selected {
+    opacity: .4;
+}
+
 .result h3 {
     margin: 0;
 }
