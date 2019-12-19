@@ -94,3 +94,7 @@
     width: 10%;
     height: 20%;
 }
+
+body {
+    overflow: scroll;
+}
