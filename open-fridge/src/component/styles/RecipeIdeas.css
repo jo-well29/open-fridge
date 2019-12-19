@@ -21,7 +21,7 @@
     color: grey;
 }
 
-.modal {
+.recipeModal {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,7 +38,7 @@
     border: 1px solid black;
 }
 
-.modal img {
+.recipeModal img {
     width: 80%;
     height: 40%;
     
@@ -72,7 +72,7 @@
         color: grey;
     }
     
-    .modal {
+    .recipeModal {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -89,7 +89,7 @@
         border: 1px solid black
     }
     
-    .modal img {
+    .recipeModal img {
         width: 80%;
         height: 40%;
     }
