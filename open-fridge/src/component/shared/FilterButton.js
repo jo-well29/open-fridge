@@ -3,7 +3,7 @@ import '../styles/FilterButton.css'
 
 export const FilterButton = ({ onClick, className, list, color, name, variant }) => (
 	<button
-		name={name}
+		id={name}
 		onClick={(e) => onClick(e, list)}
 		className={`filterButton ${className} ${variant} ${color}`}>
 		{name}

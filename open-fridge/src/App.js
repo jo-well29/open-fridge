@@ -13,6 +13,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 
 
+
 class App extends React.Component {
 
   constructor(props) {
@@ -58,14 +59,15 @@ class App extends React.Component {
     })
   }
 
-  selector = (e, list) => {
+ selector = (e, list) => {
+   console.log(e.target);
     let newList;
-    if (this.state[list].includes(e.target.name)) {
-      newList = [...this.state[list]]
-      newList.splice(newList.indexOf(e.target.name), 1)
+    if (this.state[list].includes(e.target.id)) {
+      newList = [ ...this.state[list]]
+      newList.splice(newList.indexOf(e.target.id), 1)
     } else {
-      newList = [...this.state[list]]
-      newList.push(e.target.name);
+      newList = [ ...this.state[list]]
+      newList.push(e.target.id);
     }
     this.setState(state => (
       { [list]: newList }
@@ -73,7 +75,7 @@ class App extends React.Component {
   }
 
   tempToggle = (e) => {
-    this.state.filterTemp === e.target.name ? this.setState({ filterTemp: null }) : this.setState({ filterTemp: e.target.name });
+    this.state.filterTemp === e.target.id ? this.setState({filterTemp: null}) : this.setState({filterTemp: e.target.id});
   }
 
   render() {
@@ -81,10 +83,10 @@ class App extends React.Component {
     const filterData = { filterTime, filterTemp, filterFlavor };
     return (
       <div className="App">
-        <Header onClick={this.handleToggle} />
-        <Inventory expand={this.state.expand} onClick={() => this.expander('inventory')} textChange={this.textHandler} ingredientSearch={this.state.ingredientSearch} />
+        <Header onClick={this.handleToggle}/>
+        <Inventory expand={this.state.expand} onClick={() => this.expander('inventory')} textChange={this.textHandler} ingredientSearch={this.state.ingredientSearch} onSelect={this.selector} ingredients={this.state.ingredients} />
         <Filter formData={filterData} onChange={this.sliderHandler} expand={this.state.expand} onSelect={this.selector} tempToggle={this.tempToggle} onClick={() => this.expander('filter')} />
-        <RecipeIdeas expand={this.state.expand} onClick={() => this.expander('recipes')} />
+        <RecipeIdeas expand={this.state.expand} onClick={() => this.expander('recipes')} filterTime={this.state.filterTime} filterTemp={this.state.filterTemp} filterFlavor={this.state.filterFlavor} ingredients={this.state.ingredients} />
         <div>
           <MuiThemeProvider>
             <Drawer
