@@ -4,9 +4,13 @@ import './styles/RecipeCard.css'
 import { RecipeTile } from './shared/RecipeTile'
 import { RecipeCard } from './shared/RecipeCard'
 import ToggleHeader from './shared/ToggleHeader'
+import { recipeIndexer } from '../config'
 
 
 export const RecipeIdeas = (props) => {
+
+    console.log(recipeIndexer())
+
     return (
         <>
         <ToggleHeader onClick={props.onClick} expand={props.expand} sectionName="recipes" label="Recipe ideas" color="mint" />
