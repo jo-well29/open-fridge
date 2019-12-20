@@ -32,6 +32,9 @@ export default class MultipleItems extends Component {
 
     const vegetables = ingredientMapper('vegetables');
     const proteins = ingredientMapper('proteins');
+    // const carbohydrates = ingredientMapper('carbohydrates');
+    // const dairy = ingredientMapper('dairy');
+    // const spices = ingredientMapper('spices');
 
     const settings = {
       dots: true,
