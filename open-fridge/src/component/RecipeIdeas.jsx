@@ -5,21 +5,21 @@ import { RecipeTile } from './shared/RecipeTile'
 import RecipeCard from './shared/RecipeCard'
 import ToggleHeader from './shared/ToggleHeader'
 import { recipeIndexer } from '../config'
-   
+
 export default class RecipeIdeas extends React.Component {
     constructor(props) {
-        super(props) 
-            this.state = {
-                modalClick: false,
-                modalRecipe: {
-                    image: '',
-                    name: '',
-                    ingredients: [],
-                    instructions: [],
-                    description: '',
-                    time: 0
-                },
-                rands: [1,2,3]
+        super(props)
+        this.state = {
+            modalClick: false,
+            modalRecipe: {
+                image: '',
+                name: '',
+                ingredients: [],
+                instructions: [],
+                description: '',
+                time: 0
+            },
+            rands: [1, 2, 3]
         }
     }
 
@@ -45,22 +45,22 @@ export default class RecipeIdeas extends React.Component {
             results.push(recipes[this.state.rands[i]])
             i++;
         }
-        return results.slice(0,3);
+        return results.slice(0, 3);
     }
 
     modalClick = (e, recipe) => {
         if (recipe) {
             this.setState({
-                modalClick:!this.state.modalClick,
+                modalClick: !this.state.modalClick,
                 modalRecipe: recipe
             })
         } else {
             this.setState({
-                modalClick:!this.state.modalClick
+                modalClick: !this.state.modalClick
             })
         }
     }
-        
+
     render() {
 
         const recipeTiles = this.results().map((recipe, i) => <RecipeTile key={i} image_url={recipe.image} name={recipe.name} cooktime={recipe.time} handleClick={this.modalClick} recipe={recipe} />)
@@ -80,6 +80,7 @@ export default class RecipeIdeas extends React.Component {
 
         return (
             <>
+
                 <ToggleHeader onClick={this.props.onClick} expand={this.props.expand} sectionName="recipes" label="Recipe ideas" color="mint" />
                 <div className={`content ideas ${this.props.expand === 'recipes' ? 'expand' : 'contract'}`}>
                     <div className='RecipeIdeas-container'>
@@ -90,7 +91,9 @@ export default class RecipeIdeas extends React.Component {
                         {renderModal}
                     </div>
                 </div>
+
             </>
         )
     }
+
 }

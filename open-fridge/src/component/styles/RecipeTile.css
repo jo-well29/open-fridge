@@ -16,3 +16,24 @@
 .RecipeTile p {
     margin: 0;
 }
+
+@media only screen and (max-width: 500px) {
+    .RecipeTile {
+        width: 30%;
+        font-size: 12px;
+        font-stretch: condensed;
+        text-transform: uppercase;
+    }
+    
+    .RecipeTile .image-container {
+        width: 100%;
+    }
+    
+    .RecipeTile h3 {
+        margin: 0;
+    }
+    
+    .RecipeTile p {
+        margin: 0;
+    }
+}

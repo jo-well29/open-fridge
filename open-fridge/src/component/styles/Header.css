@@ -26,14 +26,24 @@
     margin: 0;
     padding: 0;
     height: 100%;
+    cursor: pointer;
 }
 
 .logo img {
-    height: 8vh;
+    /* height: 8vh; */
+    position: relative;
+    top: 10px;
 }
 
 .hamburger-menu img {
-    height: 6vh;
+    /* height: 6vh; */
+    position: relative;
+    top: 10px;
+}
+
+.hamburger-menu p {
+    position: relative;
+    top: 10px
 }
 }
 
@@ -63,6 +73,7 @@
     margin: 0;
     padding: 0;
     height: 100%;
+    cursor: pointer;
 }
 
 .logo img {

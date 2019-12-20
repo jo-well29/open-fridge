@@ -28,12 +28,19 @@
     border-radius: 0.6em;
     width: 30%;
     height: 100%;
+    text-align: center;
+    font-size: 70%;
 }
 .temperature button {
     border-radius: 0.6em;
     width: 20%;
     height: 20%;
     text-align: center;
+    font-size: 70%;
+}
+
+div.content.filter {
+    overflow-y: scroll;
 }
 }
 

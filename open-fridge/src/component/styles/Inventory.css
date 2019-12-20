@@ -13,3 +13,13 @@ div.slick-list {
 .ingredientButton.selected {
     opacity: .4;
 }
+
+.content .inventory {
+    overflow: scroll;
+}
+
+@media only screen and (max-width: 500px) {
+    div.content.inventory {
+        overflow-y: scroll;
+    }
+}
