@@ -161,6 +161,7 @@ const photoUrls = [
     'https://images.unsplash.com/photo-1490717064594-3bd2c4081693?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
 ];
 const measurements = ['c', 'tsp', 'oz', 'tbsp', 'c']
+const dishTitles = 'sangwich sandwich sammie sando quesadilla taco hash stirfry surprise soup stew porridge wrap salad pilaf bake casserole dish platter dip stack melt kebab  patty smoothie heap pasta slider burger meal delight bowl melange souffle etouffee gumbo jambalaya mound'.split(' ');
 const times = [15, 15, 15, 30, 30, 30, 30, 45, 60]
 const ingredientArray = Object.keys(nodeIndexer())
 
@@ -179,8 +180,17 @@ const recipeMaker = () => {
 	let recipe = {};
     let name = loremPuller(Math.floor(Math.random() * 2 + 2), loremArray).map(word => word.charAt(0) + word.slice(1));
     let capName = name.map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    recipe.name = capName.join(' ');
-	recipe.image = photoUrls[Math.floor(Math.random() * photoUrls.length)];
+    let dishType = dishTitles[Math.floor(Math.random() * dishTitles.length)]
+    recipe.name = capName.join(' ') + ' ' + dishType.charAt(0).toUpperCase() + dishType.slice(1);
+    recipe.image = photoUrls[Math.floor(Math.random() * photoUrls.length)];
+    
+    // flavor faker
+	let flavorNum = Math.floor(Math.random() * 3 + 3);
+	let recipeFlavors = [];
+	for (let i = 0; i < flavorNum; i++) {
+        recipeFlavors.push(flavors[Math.floor(Math.random() * flavors.length + 1)])
+	}
+    recipe.flavors = recipeFlavors;
 
 	// ingredient faker
 	let ingredientNum = Math.floor(Math.random() * 9 + 3);
