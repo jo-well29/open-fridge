@@ -66,16 +66,16 @@ export default class RecipeIdeas extends React.Component {
         const recipeTiles = this.results().map((recipe, i) => <RecipeTile key={i} image_url={recipe.image} name={recipe.name} cooktime={recipe.time} handleClick={this.modalClick} recipe={recipe} />)
         console.log(this.state.modalClick)
 
-        const modal =
-            <div className="modal">
-                <div className="exit-button" onClick={this.modalClick}>X</div>
-                <img src={this.state.modalRecipe.image} />
-                <div>{this.state.modalRecipe.name.toUpperCase()}</div>
-                <div>Ingredients: {Object.keys(this.state.modalRecipe.ingredients).join(', ').replace('_', ' ')}</div>
-                <div>Cook time: {this.state.modalRecipe.time}</div>
-                <div>Description: {this.state.modalRecipe.description}</div>
-            </div>
-
+        const modal = 
+        <div className="recipeModal">
+            <div className="exit-button" onClick={this.modalClick}>X</div>
+            <img src={this.state.modalRecipe.image}/> 
+            <div>{this.state.modalRecipe.name.toUpperCase()}</div>
+            <div>Ingredients: {Object.keys(this.state.modalRecipe.ingredients).join(', ').replace('_',' ')}</div>
+            <div>Cook time: {this.state.modalRecipe.time}</div>
+            <div>Description: {this.state.modalRecipe.description}</div>
+        </div>
+            
         const renderModal = this.state.modalClick ? modal : false
 
         return (
