@@ -8,7 +8,7 @@ const Filter = ({ formData, onSelect, onClick, onChange, tempToggle, expand }) =
     return (
         <>
             <ToggleHeader onClick={onClick} expand={expand} sectionName="filter" label="Filter" color="magenta" />
-            <div className={`content ${expand === 'filter' ? 'expand' : 'contract'}`}>
+            <div className={`content filter ${expand === 'filter' ? 'expand' : 'contract'}`}>
                 <div className="time-container">
                     <h3>Time</h3>
                     <div className="scale">

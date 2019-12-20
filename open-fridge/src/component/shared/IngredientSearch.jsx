@@ -16,7 +16,7 @@ export const IngredientSearch = ({ ingredientSearch, onSelect, textChange, selec
         )}) : null;
 
     return (
-        <>
+        <div className="search">
         <form className="ingredientSearch" onSubmit={(event) => event.preventDefault()}>
             <img src={SearchIcon} alt="search" />
             <input name="ingredientSearch" type="text" value={ingredientSearch} onChange={textChange} />
@@ -24,7 +24,7 @@ export const IngredientSearch = ({ ingredientSearch, onSelect, textChange, selec
         <div className="searchResults">
             { resultButtons }
         </div>
-        </>
+        </div>
     )
 }
 
