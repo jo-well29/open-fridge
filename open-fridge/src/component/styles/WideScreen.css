@@ -79,8 +79,14 @@
     div.inventory {
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
         flex-wrap: wrap;
         padding: 12px;
+    }
+
+    .inventory h2 {
+        font-size: 18px;
+        text-align: left;
     }
 
     .search form {
