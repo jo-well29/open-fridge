@@ -19,7 +19,7 @@ export const IngredientSearch = ({ ingredientSearch, onSelect, textChange, selec
         <div className="search">
         <form className="ingredientSearch" onSubmit={(event) => event.preventDefault()}>
             <img src={SearchIcon} alt="search" />
-            <input name="ingredientSearch" type="text" value={ingredientSearch} onChange={textChange} />
+            <input name="ingredientSearch" type="text" value={ingredientSearch} autocomplete="off" onChange={textChange} />
         </form>
         <div className="searchResults">
             { resultButtons }

@@ -1,5 +1,6 @@
 .toggleheader {
     height: 56px;
+    padding: 0px 8px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -7,6 +8,7 @@
 }
 
 .toggleheader h2 {
+    margin: 0;
     flex-grow: 10;
     text-align: left;
 }

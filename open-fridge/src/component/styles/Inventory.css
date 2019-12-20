@@ -2,6 +2,11 @@ div.slick-list {
     margin-bottom: 3%;
 }
 
+.carousel-holder h2 {
+    font-size: 20px;
+    text-align: left;
+}
+
 .ingredientButton {
     background-color: #ffffff;
 }

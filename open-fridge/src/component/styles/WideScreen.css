@@ -84,18 +84,18 @@
         padding: 12px;
     }
 
-    .inventory h2 {
+    .carousel-holder h2 {
         font-size: 18px;
         text-align: left;
     }
 
     .search form {
         position: relative;
-        top: -14px;
+        top: -6px;
         padding-bottom: 5%;
     }
 
     .carousel-holder {
-        width: 45%;
+        width: 48%;
     }
 }

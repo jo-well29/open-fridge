@@ -1,8 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 @media only screen and (max-width: 500px) {
 
-.time-container {
-    
+.toggleheader h2 {
+    font-size: 22px;
+}
+
+.filter h3 {
+    font-size: 22px;
+}
+
+.time-container {    
     display: flex;
     justify-content: space-around;
 }
@@ -36,7 +43,7 @@
     height: 100%;
 }
 
-.temperature button {
+.temperature button.filterButton {
     border-radius: 0.6em;
     width: 20%;
     height: 20%;
