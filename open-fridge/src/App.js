@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import './component/styles/WideScreen.css'
 import Header from './component/Header'
 import Filter from './component/Filter'
 import Inventory from './component/Inventory'

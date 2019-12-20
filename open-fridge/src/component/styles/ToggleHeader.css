@@ -1,8 +1,14 @@
 .toggleheader {
     height: 56px;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     cursor: pointer;
+}
+
+.toggleheader h2 {
+    flex-grow: 10;
+    text-align: left;
 }
 
 .cocoa {

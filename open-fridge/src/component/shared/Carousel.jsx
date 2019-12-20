@@ -47,13 +47,13 @@ export default class MultipleItems extends Component {
 
     return (
       <>
-      <div>
+      <div className="carousel-holder">
         <h2> Vegetables </h2>
         <Slider {...settings}>
           {vegetables}
         </Slider>
       </div>
-      <div>
+      <div className="carousel-holder">
         <h2> Proteins </h2>
         <Slider {...settings}>
           {proteins}
