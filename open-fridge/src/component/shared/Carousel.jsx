@@ -32,9 +32,9 @@ export default class MultipleItems extends Component {
 
     const vegetables = ingredientMapper('vegetables');
     const proteins = ingredientMapper('proteins');
-    // const carbohydrates = ingredientMapper('carbohydrates');
-    // const dairy = ingredientMapper('dairy');
-    // const spices = ingredientMapper('spices');
+    const carbohydrates = ingredientMapper('carbohydrates');
+    const dairy = ingredientMapper('dairy');
+    const spices = ingredientMapper('spices');
 
     const settings = {
       dots: true,
@@ -59,6 +59,25 @@ export default class MultipleItems extends Component {
           {proteins}
         </Slider>
       </div>
+      <div>
+        <h2> Carbohydrates </h2>
+        <Slider {...settings}>
+          {carbohydrates}
+        </Slider>
+      </div>
+      <div>
+        <h2> Dairy </h2>
+        <Slider {...settings}>
+          {dairy}
+        </Slider>
+      </div>
+      <div>
+        <h2> Spices </h2>
+        <Slider {...settings}>
+          {spices}
+        </Slider>
+      </div>
+
       </>
     );
   }
