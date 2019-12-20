@@ -162,7 +162,8 @@ const photoUrls = [
 ];
 const measurements = ['c', 'tsp', 'oz', 'tbsp', 'c']
 const times = [15, 15, 15, 30, 30, 30, 30, 45, 60]
-const ingredientArray = Object.keys(nodeIndexer())
+const ingredientArray = Object.keys(nodeIndexer());
+const dishTitles = 'sangwich sandwich sammie sando quesadilla taco hash stirfry surprise soup stew porridge wrap salad pilaf bake casserole dish platter dip stack melt kebab  patty smoothie heap pasta slider burger meal delight bowl melange souffle etouffee gumbo jambalaya mound'.split(' ');
 
 let loremArray = loremSeed.toLowerCase().replace(/[^\w\s]|_/g, '').replace(/(\r\n|\n|\r)/gm," ").split(' ');
 loremArray = loremArray.map(word => word.replace(/\s+/g,' '));
@@ -179,8 +180,9 @@ const recipeMaker = () => {
 	let recipe = {};
     let name = loremPuller(Math.floor(Math.random() * 2 + 2), loremArray).map(word => word.charAt(0) + word.slice(1));
     let capName = name.map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    recipe.name = capName.join(' ');
-	recipe.image = photoUrls[Math.floor(Math.random() * photoUrls.length)];
+    let dishType = dishTitles[Math.floor(Math.random() * dishTitles.length)]
+    recipe.name = capName.join(' ') + ' ' + dishType.charAt(0).toUpperCase() + dishType.slice(1);
+    recipe.image = photoUrls[Math.floor(Math.random() * photoUrls.length)];
 
 	// ingredient faker
 	let ingredientNum = Math.floor(Math.random() * 9 + 3);
@@ -191,6 +193,14 @@ const recipeMaker = () => {
 		ingredientObj[key] = val;
 	}
     recipe.ingredients = ingredientObj;
+
+    // flavor faker
+    let flavorNum = Math.floor(Math.random() * 3 + 3);
+    let recipeFlavors = [];
+    for (let i = 0; i < flavorNum; i++) {
+        recipeFlavors.push(flavors[Math.floor(Math.random() * flavors.length + 1)])
+    }
+    recipe.flavors = recipeFlavors;
     
     // description faker
     let descArr = [];
