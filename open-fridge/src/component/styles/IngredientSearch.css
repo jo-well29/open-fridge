@@ -1,15 +1,32 @@
+.search form {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    padding-top: 5%;
+    padding-right: 5%;
+}
+
+.search form img {
+    height: 16px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
 .result {
+    position: relative;
     display: flex;
     cursor: pointer;
+    background: #ffffff;
     border: 0;
     border-radius: 10px;
     box-shadow: 0 0 5px grey;
     margin: auto;
-    margin-bottom: 8px;
+    margin-top: 8px;
     padding: 4px;
+    z-index: 11;
 }
 
-.result.selected {
+.result.selected img, .result.selected h3 {
     opacity: .4;
 }
 

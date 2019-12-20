@@ -1,0 +1,101 @@
+@media only screen and (min-width: 900px) {
+
+    div.App {
+        display: grid;
+        grid-template-rows: 84px auto;
+        grid-template-columns: 1fr 4fr;
+        grid-row-gap: 0;
+    }
+
+    .header {
+        grid-column: 1 / span 2;
+    }
+
+    img.arrow {
+        display: none;
+    }
+
+    .toggleheader.filter {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+        padding: 8px;
+        padding-bottom: 0px;
+        border: 1px solid #000000;
+        border-bottom: 0;
+        flex-direction: column;
+    }
+
+    .content.filter {
+        grid-column: 1 / span 1;
+        grid-row: 3 / span 4;
+        padding: 8px;
+        padding-top: 0px;
+        border: 1px solid #000000;
+        border-top: 0;
+        background: #ffffff;
+    }
+
+    .time-container {
+        padding-top: 0%;
+        flex-direction: column;
+    }
+
+    div.temperature {
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: auto;
+        border-top: 0;
+    }
+
+    .temperature h3 {
+        width: 100%;
+    }
+
+    .temperature .filterButton {
+        width: 40%;
+        margin-bottom: 2vh;
+    }
+
+    div.flavor {
+        flex-direction: column;
+        border-top: 0;
+        height: 38vh;
+    }
+
+    .flavor h3 {
+        position: relative;
+    }
+
+    .flavor .attributes {
+        width: 100%;
+    }
+
+    .flavor .attributes .filterButton {
+        width: 40%;
+        height: 14%;
+        margin-bottom: 12px;
+    }
+
+    div.inventory {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 12px;
+    }
+
+    .inventory h2 {
+        font-size: 18px;
+        text-align: left;
+    }
+
+    .search form {
+        position: relative;
+        top: -14px;
+        padding-bottom: 5%;
+    }
+
+    .carousel-holder {
+        width: 45%;
+    }
+}

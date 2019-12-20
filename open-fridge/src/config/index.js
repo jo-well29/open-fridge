@@ -72,10 +72,6 @@ const ingredients = {
         sourCream: 'https://i.imgur.com/VDuBUl9.png',
         whippingCream: 'https://i.imgur.com/oVVaNRI.png',
         yogurt: 'https://i.imgur.com/hWRj8av.png'
-
-
-
-
     },
     spices: {
         basil: 'https://i.imgur.com/K4Sqsq6.png',
