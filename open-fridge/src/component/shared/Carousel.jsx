@@ -32,6 +32,9 @@ export default class MultipleItems extends Component {
 
     const vegetables = ingredientMapper('vegetables');
     const proteins = ingredientMapper('proteins');
+    const carbohydrates = ingredientMapper('carbohydrates');
+    const dairy = ingredientMapper('dairy');
+    const spices = ingredientMapper('spices');
 
     const settings = {
       dots: true,
@@ -44,16 +47,34 @@ export default class MultipleItems extends Component {
 
     return (
       <>
-      <div>
+      <div className="carousel-holder">
         <h2> Vegetables </h2>
         <Slider {...settings}>
           {vegetables}
         </Slider>
       </div>
-      <div>
+      <div className="carousel-holder">
         <h2> Proteins </h2>
         <Slider {...settings}>
           {proteins}
+        </Slider>
+      </div>
+      <div className="carousel-holder">
+        <h2> Carbohydrates </h2>
+        <Slider {...settings}>
+          {carbohydrates}
+        </Slider>
+      </div>
+      <div className="carousel-holder">
+        <h2> Dairy </h2>
+        <Slider {...settings}>
+          {dairy}
+        </Slider>
+      </div>
+      <div className="carousel-holder">
+        <h2> Spices </h2>
+        <Slider {...settings}>
+          {spices}
         </Slider>
       </div>
       </>

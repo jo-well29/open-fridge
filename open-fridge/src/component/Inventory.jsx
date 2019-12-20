@@ -8,9 +8,10 @@ export const Inventory = ({ ingredientSearch, onSelect, onClick, expand, textCha
 
     return (
         <>
-            <ToggleHeader onClick={onClick} expand={expand} sectionName="inventory" label="What's in your fridge?" color="cocoa" />
-            <div className={`content ${expand === 'inventory' ? 'expand' : 'contract'}` }>
+            <ToggleHeader onClick={onClick} expand={expand} sectionName="inventory" label="What's in your fridge?" color="cocoa">                
                 <IngredientSearch ingredientSearch={ingredientSearch} selected={ingredients} onSelect={onSelect} textChange={textChange} />
+            </ToggleHeader>
+            <div className={`content inventory ${expand === 'inventory' ? 'expand' : 'contract'}` }>
                 <Carousel selected={ingredients} onSelect={onSelect} />
             </div>
         </>

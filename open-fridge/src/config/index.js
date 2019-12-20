@@ -32,18 +32,60 @@ const ingredients = {
         brussels_sprouts: 'https://i.imgur.com/Ev9DXao.png'
     },
     proteins: {
-        chicken: '',
-        pork: '',
-        beef: '',
-        salmon: '',
-        beans: '',
-        tofu: '',
-        turkey: '',
-        lamb: '',
-        duck: '',
-        chickpeas: '',
-        almonds: '',
-        shrimp: ''
+        chicken: 'https://i.imgur.com/mPcN8QH.png',
+        pork: 'https://i.imgur.com/iLA2Q5b.png',
+        beef: 'https://i.imgur.com/A6IPqwL.png',
+        salmon: 'https://i.imgur.com/DlRf2UL.png',
+        beans: 'https://i.imgur.com/EVQWsdf.png',
+        tofu: 'https://i.imgur.com/kQC9Xmm.png',
+        turkey: 'https://i.imgur.com/jv9EQJV.png',
+        lamb: 'https://i.imgur.com/ZkHFKbO.png',
+        duck: 'https://i.imgur.com/O1qxFfw.png',
+        chickpeas: 'https://i.imgur.com/CbmDMfV.png',
+        almonds: 'https://i.imgur.com/DpicAbr.png',
+        shrimp: 'https://i.imgur.com/vEYgtJx.png'
+    },
+    carbohydrates: {
+        bagel: 'https://i.imgur.com/fAO4MNX.png',
+        biscuit: 'https://i.imgur.com/iJAk0oY.png',
+        bread: 'https://i.imgur.com/HC9xi4Y.png',
+        granola: 'https://i.imgur.com/w4GgHIK.png',
+        naan: 'https://i.imgur.com/lzIf2kU.png',
+        oats: 'https://i.imgur.com/bPNFJKK.png',
+        pasta: 'https://i.imgur.com/8GV5lmU.png',
+        pita: 'https://i.imgur.com/ojVM13u.png',
+        pretzel: 'https://i.imgur.com/WZWOahm.png',
+        rice: 'https://i.imgur.com/F5DgQKw.png',
+        waffle: 'https://i.imgur.com/IhhBlFp.png',
+        wheat: 'https://i.imgur.com/vaS42Dt.png'
+    },
+    dairy: {
+        almondMilk: 'https://i.imgur.com/hORGTxs.png',
+        brie: 'https://i.imgur.com/pPmAVNp.png',
+        butter: 'https://i.imgur.com/6DauAuX.png',
+        cheese: 'https://i.imgur.com/HABrNUN.png',
+        creemCheese: 'https://i.imgur.com/yR5D4GJ.png',
+        egg: 'https://i.imgur.com/iGmKtdt.png',
+        iceCream: 'https://i.imgur.com/hczyNxO.png',
+        milk: 'https://i.imgur.com/orIJr3s.png',
+        ricotta: 'https://i.imgur.com/M1FvGN3.png',
+        sourCream: 'https://i.imgur.com/VDuBUl9.png',
+        whippingCream: 'https://i.imgur.com/oVVaNRI.png',
+        yogurt: 'https://i.imgur.com/hWRj8av.png'
+    },
+    spices: {
+        basil: 'https://i.imgur.com/K4Sqsq6.png',
+        cardamom: 'https://i.imgur.com/oHdaVbj.png',
+        chiliFlakes: 'https://i.imgur.com/G0dQ4BJ.png',
+        cinammon: 'https://i.imgur.com/D4cxP7z.png',
+        garlicPowder: 'https://i.imgur.com/LJ4Du4C.png',
+        ginger: 'https://i.imgur.com/aRZeMRa.png',
+        papikra: 'https://i.imgur.com/8e4Jn9r.png',
+        pepper: 'https://i.imgur.com/lSjN2Kx.png',
+        rosemary: 'https://i.imgur.com/F8X7z2e.png',
+        salt: 'https://i.imgur.com/zz1EWg7.png',
+        sesame: 'https://i.imgur.com/MPLJCbJ.png',
+        thyme: 'https://i.imgur.com/ANlxG8w.png'
     }
 }
 
