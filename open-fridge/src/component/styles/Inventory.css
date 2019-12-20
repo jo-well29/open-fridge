@@ -11,6 +11,10 @@ div.slick-list {
     background-color: #ffffff;
 }
 
+.ingredientButton img {
+    width: 80%;
+}
+
 .ingredientButton:focus {
     outline: none;
 }
